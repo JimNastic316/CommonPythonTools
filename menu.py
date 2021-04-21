@@ -6,16 +6,25 @@ menu = { '1': "one",
 
 }
 
-print("Please choose (0 to quit)")
-for choice in menu:
-    print(f"\t {choice} - {menu[choice]}")
+# print("Please choose (0 to quit)")
+# for choice in menu:
+#     print(f"\t {choice} - {menu[choice]}")
 
 while True:
-    choice = input()
+    print("Please choose (0 to quit)")
+    for choice in menu:
+        print(f"\t {choice} - {menu[choice]}")
+
+
+    choice = input("Enter your selection: ")
+    print(f"You chose {choice}")
 
     if choice == '0':
         print("Good bye")
         break
 
-    if choice in menu.keys():
-        print(f"You chose {choice}")
+    elif choice in menu.keys():
+        print(f"{choice} is valid")
+
+    else:
+        print(f"{choice} is invalid, try again")
